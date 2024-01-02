@@ -5,13 +5,22 @@ import com.msbeigi.output.Print;
 public class Matrix extends LinearAlgebra {
     public Matrix(){}
 
-    public Matrix(int m, int n) {
-        super(m, n);
+    public Matrix(int mRow, int nCol) {
+        super(mRow, nCol);
     }
 
-    public Matrix(int mRow, int nCol, String matrix) {
+    public Matrix(int squareSize) {
+        super(squareSize, squareSize);
+    }
+
+    public Matrix(int mRow, int nCol, String elements) {
         super(mRow, nCol);
-        parseMatrixString(matrix);
+        parseMatrixString(elements);
+    }
+
+    public Matrix(int squareSize, String elements) {
+        this(squareSize);
+        parseMatrixString(elements);
     }
 
     @Override
@@ -19,4 +28,6 @@ public class Matrix extends LinearAlgebra {
         Print print = new Print(this);
         print.printMat();
     }
+
+
 }
