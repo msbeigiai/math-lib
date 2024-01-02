@@ -35,9 +35,7 @@ public class Vector extends LinearAlgebra {
     }
 
     public Vector subtract(Vector v2) {
-        Vector vector = new Vector(length());
-        vector = v2.multiply(-1.0).add(this);
-        return vector;
+        return v2.multiply(-1.0).add(this);
     }
 
     public Vector multiply(Vector v2) {
