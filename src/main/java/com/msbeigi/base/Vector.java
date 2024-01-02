@@ -2,7 +2,7 @@ package com.msbeigi.base;
 
 import com.msbeigi.output.Print;
 
-public class Vector extends LinearAlgebra {
+public class Vector extends LinearAlgebra implements VectorGeo {
 
     private int length;
 
@@ -57,10 +57,4 @@ public class Vector extends LinearAlgebra {
         return vector;
     }
 
-
-    @Override
-    public void printMat() {
-        Print print = new Print(this);
-        print.printMat();
-    }
 }
