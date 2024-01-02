@@ -1,6 +1,6 @@
 package com.msbeigi.base;
 
-public class LinearAlgebra {
+public abstract class LinearAlgebra {
     protected double[][] X;
     protected int m;
     protected int n;
@@ -16,4 +16,17 @@ public class LinearAlgebra {
         this.n = n;
         X = new double[m][n];
     }
+
+    public double[][] getX() {
+        return X;
+    }
+
+    public int getM() {
+        return m;
+    }
+
+    public int getN() {
+        return n;
+    }
+
 }
