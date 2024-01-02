@@ -56,4 +56,5 @@ public abstract class LinearAlgebra {
         }
         return identity;
     }
+
 }
