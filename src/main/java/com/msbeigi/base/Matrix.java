@@ -1,5 +1,7 @@
 package com.msbeigi.base;
 
+import com.msbeigi.output.Print;
+
 public class Matrix extends LinearAlgebra {
     public Matrix(){}
 
@@ -12,19 +14,9 @@ public class Matrix extends LinearAlgebra {
         parseMatrixString(matrix);
     }
 
-    private void parseMatrixString(String matrixString) {
-        String[] elements = matrixString.replaceAll("[\\[\\] ]", "").split(",");
-
-        if (elements.length != m * n) {
-            throw new IllegalArgumentException("Invalid matrix dimensions");
-        }
-
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                X[i][j] = Double.parseDouble(elements[i * n + j]);
-            }
-        }
+    @Override
+    public void printMat() {
+        Print print = new Print(this);
+        print.printMat();
     }
-
-
 }
