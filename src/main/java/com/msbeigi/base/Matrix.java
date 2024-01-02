@@ -2,7 +2,7 @@ package com.msbeigi.base;
 
 import com.msbeigi.output.Print;
 
-public class Matrix extends LinearAlgebra {
+public class Matrix extends LinearAlgebra implements MatrixGeo {
     public Matrix(){}
 
     public Matrix(int mRow, int nCol) {
@@ -24,10 +24,13 @@ public class Matrix extends LinearAlgebra {
     }
 
     @Override
-    public void printMat() {
-        Print print = new Print(this);
-        print.printMat();
+    public Matrix identity() {
+        Matrix identity = new Matrix(m);
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < m; j++) {
+                if (i == j) identity.X[i][j] = 1.0;
+            }
+        }
+        return identity;
     }
-
-
 }
