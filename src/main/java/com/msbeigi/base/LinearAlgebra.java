@@ -31,7 +31,10 @@ public abstract class LinearAlgebra {
         return n;
     }
 
-    public abstract void printMat();
+    public void printMat() {
+        Print print = new Print(this);
+        print.printMat();
+    }
 
     protected void parseMatrixString(String matrixString) {
         String[] elements = matrixString.replaceAll("[\\[\\] ]", "").split(",");
@@ -45,16 +48,6 @@ public abstract class LinearAlgebra {
                 X[i][j] = Double.parseDouble(elements[i * n + j]);
             }
         }
-    }
-
-    public Matrix identity() {
-        Matrix identity = new Matrix(m);
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < m; j++) {
-                if (i == j) identity.X[i][j] = 1.0;
-            }
-        }
-        return identity;
     }
 
 }
