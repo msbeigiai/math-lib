@@ -69,10 +69,12 @@ public class Matrix extends LinearAlgebra implements MatrixGeo {
         if (this.n != other.m) {
             throw new IllegalArgumentException("The first matrices column is not equal to other matrices row");
         }
-        Matrix matrix = new Matrix(this.m, this.n);
+        Matrix matrix = new Matrix(this.m, other.n);
         for (int i = 0; i < this.m; i++) {
-            for (int j = 0; j < this.n; j++) {
-                matrix.X[i][j] += this.X[i][j] * other.X[j][i];
+            int k = 0;
+            for (int j = 0; j < other.n; j++) {
+                matrix.X[i][j] += this.X[i][j] * other.X[j][k];
+                k++;
             }
         }
         return matrix;
